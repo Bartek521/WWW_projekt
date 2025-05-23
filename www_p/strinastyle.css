@@ -1,0 +1,41 @@
+body{
+    background-color: rgb(223, 223, 223);
+    color: rgb(0, 0, 0);
+
+}
+.naglowek{
+    text-align: left;
+    font-size: 40px;
+    margin:0;
+}
+button{
+    background: none;
+    border: none;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+body.dark {
+   background-color: #111;
+   color: #eee;
+}
+.nawigacja a{
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+    display: block;
+    background-color:none;
+}
+.nawigacja ul{
+    background-color:rgb(60, 60, 60);
+    list-style: none;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;    
+}
+.nawigacja a:hover{
+    background-color:rgb(117, 117, 117);
+}
+.nawigacja li{
+    float: left;
+}
