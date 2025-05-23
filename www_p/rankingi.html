@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rankingi pojazdów</title>
+  <link rel="stylesheet" type="text/css" href="strinastyle.css" />
+  <script defer src="str1.js"></script> 
+</head>
+<body>
+  <header>
+    <h1 class="naglowek">Rankingi</h1>
+    <button id="jasny_ciemny">🌛</button>
+    <nav class="nawigacja">
+      <ul>
+        <li><a href="marki.html">Wszystkie marki</a></li>
+        <li><a href="Strona.html">Strona główna</a></li>
+        <li><a href="Ciekawostki.html">Ciekawostki</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h2>Sortuj pojazdy</h2>
+      <label for="sortowanie">Sortuj według:</label>
+      <select id="sortowanie">
+        <option value="cena">Ceny</option>
+        <option value="predkosc">Prędkości maksymalnej</option>
+        <option value="waga">Wagi</option>
+        <option value="dlugosc">Długości</option>
+        <option value="szerokosc">Szerokości</option>
+      </select>
+    </section>
+
+    <section>
+      <h2>Ranking pojazdów</h2>
+      <table id="tabela-ranking">
+        <thead>
+          <tr>
+            <th>Marka</th>
+            <th>Model</th>
+            <th>Cena (PLN)</th>
+            <th>Prędkość (km/h)</th>
+            <th>Waga (kg)</th>
+            <th>Długość (mm)</th>
+            <th>Szerokość (mm)</th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Pjotrowski i Mroziu development. Wszelkie prawa zastrzeżone.</p>
+  </footer>
+</body>
+</html>

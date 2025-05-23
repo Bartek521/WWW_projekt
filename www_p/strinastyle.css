@@ -39,3 +39,57 @@ body.dark {
 .nawigacja li{
     float: left;
 }
+.lista-marek {
+    padding: 2rem;
+    text-align: center;
+}
+
+.marki-grid {
+    border: 5px solid rgb(186, 162, 23);
+    border-radius: 30px;
+    background-color:silver;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 2rem;
+    list-style: none;
+    padding: 0;
+    margin: 2rem 0;
+}
+.marki-grid p{
+    color:black;
+    font-size: 20px;
+    text-shadow: 2px 2px rgba(58, 58, 58, 0.326);
+}
+.logo {
+    border-radius: 40px;
+    width: 150px;
+    padding: 10px;
+    height: 150px;
+    display: block;
+    margin: 0 auto 1rem;
+    transition: transform 0.3s ease;
+}
+.logo:hover {
+    transform: scale(1.1);
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 0.75rem;
+  text-align: center;
+}
+
+th {
+  background-color: #eee;
+  color: black;
+}
+
+select {
+  margin: 1rem 0;
+  padding: 0.5rem;
+}
