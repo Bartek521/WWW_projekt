@@ -10,7 +10,7 @@
 <body>
     <header>
         <h1 class="naglowek">Ciekawostki</h1>
-        <button id="jasny_ciemny">🌛</button>
+        <button class="mode" id="jasny_ciemny">🌛</button>
         <nav class="nawigacja">
         <ul>
             <li><a href="Strona.html">Strona Główna</a></li>
@@ -19,6 +19,36 @@
         </ul>
     </nav>
     </header>
-    
+     <h2 class="naglowek_tab">Modele</h2>
+        <section class="lista-autek">
+            <button onclick="pokaz_ciekawostke(0)"><p>Audi Quattro</p></button>
+            <button onclick="pokaz_ciekawostke(1)"><p>BMW M1</p></button>
+            <button onclick="pokaz_ciekawostke(2)"><p>Mercedes-Benz 300 Sl Gullwing</p></button>
+            <button onclick="pokaz_ciekawostke(3)"><p>Ferrari 250 GTO</p></button>
+            <button onclick="pokaz_ciekawostke(4)"><p>Lamborghini Miura</p></button>
+            <button onclick="pokaz_ciekawostke(5)"><p>Porsche 356</p></button>
+            <button onclick="pokaz_ciekawostke(6)"><p>Audi TT</p></button>
+            <button onclick="pokaz_ciekawostke(7)"><p>BWW E30 M3</p></button>
+            <button onclick="pokaz_ciekawostke(8)"><p>Mercedes-Benz G-Class</p></button>
+            <button onclick="pokaz_ciekawostke(9)"><p>Ferrari F40</p></button>
+            <button onclick="pokaz_ciekawostke(10)"><p>Lamborghini Countach</p></button>
+            <button onclick="pokaz_ciekawostke(11)"><p>Porsche 911</p></button>
+            <button onclick="pokaz_ciekawostke(12)"><p>Audi R8</p></button>
+            <button onclick="pokaz_ciekawostke(13)"><p>BMW 507</p></button>
+            <button onclick="pokaz_ciekawostke(14)"><p>Mercedes-Benz 600 Pullman</p></button>
+            <button onclick="pokaz_ciekawostke(15)"><p>Ferrari 458 Italia</p></button>
+            <button onclick="pokaz_ciekawostke(16)"><p>Lamborghini LM002</p></button>
+            <button onclick="pokaz_ciekawostke(17)"><p>Porsche 959</p></button>
+            </section>
+
+        <div id="autko" class="historia">
+            <img id="zdjecie_autko" src="" class="zdj_aut_ciekawostki" alt="Zdjecie"/>
+            <br>
+            <div id="ciekawostka_autko" >Wybierz modej z listy powyżej aby wyświetlić ciekawostkę</div>
+        </div>
+        
+    <footer>
+        <p>&copy; 2025 Pjotrowski i Mroziu development. Wszelkie prawa zastrzeżone.</p>
+    </footer>
 </body>
 </html>

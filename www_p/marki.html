@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="strinastyle.css">
       <script src="str1.js"></script>
-    <title>Marki samochodowe</title>
+    <title>Marki_samochodowe</title>
 </head>
 <body>
     <header>
         <h1 class="naglowek">Marki</h1>
-            <button id="jasny_ciemny">🌛</button>
+            <button class="mode" id="jasny_ciemny">🌛</button>
         <nav class="nawigacja">
         <ul>
             <li><a href="Strona.html">Strona Główna</a></li>
@@ -20,35 +20,17 @@
     </nav>
     </header>
     <main>
+        <h2 class="naglowek_tab">Marki premium i sportowe</h2>
         <section class="lista-marek">
-            <h2>Marki premium i sportowe</h2>
-            <ul class="marki-grid">
-                <li>
-                    <img src="img/audi.png" alt="Logo Audi" class="logo">
-                    <p>Audi</p>
-                </li>
-                <li>
-                    <img src="img/bmw.png" alt="Logo BMW" class="logo">
-                    <p>BMW</p>
-                </li>
-                <li>
-                    <img src="img/mercedes.png" alt="Logo Mercedes-Benz" class="logo">
-                    <p>Mercedes-Benz</p>
-                </li>
-                <li>
-                    <img src="img/ferrari.png" alt="Logo Ferrari" class="logo">
-                    <p>Ferrari</p>
-                </li>
-                <li>
-                    <img src="img/lamborghini.png" alt="Logo Lamborghini" class="logo">
-                    <p>Lamborghini</p>
-                </li>
-                <li>
-                    <img src="img/porsche.png" alt="Logo Porsche" class="logo">
-                    <p>Porsche</p>
-                </li>
-            </ul>
+           <button onclick="pokaz_historie(0)"><img src="img/audi.png" alt="Logo Audi" class="logo"><p>Audi</p></button>
+            <button onclick="pokaz_historie(1)"><img src="img/bmw.png" alt="Logo BMW" class="logo"><p>BMW</p></button>
+            <button onclick="pokaz_historie(2)"><img src="img/mercedes.png" alt="Logo Mercedes-Benz" class="logo"><p>Mercedes-Benz</p></button>
+            <button onclick="pokaz_historie(3)"><img src="img/ferrari.png" alt="Logo Ferrari" class="logo"><p>Ferrari</p></button>
+            <button onclick="pokaz_historie(4)"><img src="img/lamborghini.png" alt="Logo Lamborghini" class="logo"><p>Lamborghini</p></button>
+            <button onclick="pokaz_historie(5)"><img src="img/porsche.png" alt="Logo Porsche" class="logo"><p>Porsche</p></button>
         </section>
+        <div id="historia" class="historia">Kliknij w logo aby wyswietlic jego historię</div>
+
     </main>
 
     <footer>
