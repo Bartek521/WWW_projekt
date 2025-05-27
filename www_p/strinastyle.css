@@ -148,6 +148,7 @@ select {
 }
 .zdj_aut_ciekawostki{
     max-width: 80%;
+    width: 80%;
     display: block;
     height: auto;
     margin: auto;
