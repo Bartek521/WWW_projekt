@@ -1,19 +1,38 @@
 body{
-    background-color: rgb(223, 223, 223);
-    color: rgb(0, 0, 0);
+     background-color: rgb(223, 223, 223);
+  color: rgb(0, 0, 0);
+  margin: 0;
+  font-family: sans-serif;
 
 }
-.naglowek{
-    text-align: left;
-    font-size: 40px;
-    margin:0;
+.gorne-menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: purple;
+  padding: 10px;
+  border-top: 4px solid gold;
+}
+.naglowek-lewy,
+.naglowek-prawy {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.tytul {
+  flex: 2;
+  text-align: center;
+  font-size: 30px;
+  color: white;
+  margin: 0;
 }
 .mode{
     background: none;
-    border: none;
-    position: absolute;
-    top: 10px;
-    right: 10px;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: white;
 }
 .naglowek_tab{
     text-align: center;
@@ -23,26 +42,45 @@ body.dark {
    background-color: #111;
    color: #eee;
 }
-.nawigacja a{
-    color: white;
-    padding: 10px;
-    text-decoration: none;
-    display: block;
-    background-color:none;
+.menu-button {
+  background-color: #333;
+  color: white;
+  padding: 10px 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
 }
-.nawigacja ul{
-    background-color:rgb(60, 60, 60);
-    list-style: none;
-    overflow: hidden;
-    margin: 0;
-    padding: 0;    
+
+.menu-button:hover {
+  background-color: #444;
 }
-.nawigacja a:hover{
-    background-color:rgb(117, 117, 117);
+
+.dropdown-content {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.4s ease;
+  position: absolute;
+  background-color: white;
+  min-width: 200px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+  z-index: 1;
 }
-.nawigacja li{
-    float: left;
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
 }
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+  max-height: 500px;
+}
+
 .lista-marek {
     margin: 0 75px;
     padding: 0 10px 0 10px;
@@ -147,7 +185,7 @@ select {
     background-color:rgb(149, 149, 149);
 }
 .zdj_aut_ciekawostki{
-    max-width: 80%;
+
     width: 80%;
     display: block;
     height: auto;

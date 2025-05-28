@@ -1,15 +1,19 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const jasny_ciemny = document.getElementById("jasny_ciemny");
-    let cars = [];
+  const jasny_ciemny = document.getElementById("jasny_ciemny");
+
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.body.classList.add("dark");
+    jasny_ciemny.textContent = "☀️";
+  }
+
   jasny_ciemny.addEventListener("click", () => {
-      document.body.classList.toggle("dark");
-      if (jasny_ciemny.textContent === "🌑") {
-            jasny_ciemny.textContent = "☀️";
-        } else {
-            jasny_ciemny.textContent = "🌑";
-        }
-    });
+    document.body.classList.toggle("dark");
+    const isDark = document.body.classList.contains("dark");
+    jasny_ciemny.textContent = isDark ? "☀️" : "🌛";
+    localStorage.setItem("theme", isDark ? "dark" : "light");
   });
+});
   const pojazdy = [
   {
     marka: "Ferrari",

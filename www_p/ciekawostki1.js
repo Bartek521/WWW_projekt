@@ -1,15 +1,20 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const jasny_ciemny = document.getElementById("jasny_ciemny");
-    let cars = [];
+  const jasny_ciemny = document.getElementById("jasny_ciemny");
+
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.body.classList.add("dark");
+    jasny_ciemny.textContent = "☀️";
+  }
+
   jasny_ciemny.addEventListener("click", () => {
-      document.body.classList.toggle("dark");
-      if (jasny_ciemny.textContent === "🌑") {
-            jasny_ciemny.textContent = "☀️";
-        } else {
-            jasny_ciemny.textContent = "🌑";
-        }
-    });
+    document.body.classList.toggle("dark");
+    const isDark = document.body.classList.contains("dark");
+    jasny_ciemny.textContent = isDark ? "☀️" : "🌛";
+    localStorage.setItem("theme", isDark ? "dark" : "light");
   });
+});
+
    const ciekawostki = [
     "Audi Quattro (1980) – Rewolucyjny model z napędem na wszystkie koła, który zmienił świat rajdów i stał się ikoną technologii quattro.",
     "BMW M1 (1978-1981) – Pierwszy supersamochód BMW, zaprojektowany przez Giorgetto Giugiaro. Był jedynym modelem BMW z centralnie umieszczonym silnikiem i stał się ikoną motorsportu.",
