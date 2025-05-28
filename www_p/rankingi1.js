@@ -102,7 +102,7 @@ function renderujTabele(dane) {
   const tbody = document.querySelector("#tabela-ranking tbody");
   tbody.innerHTML = "";
 
-  dane.forEach(auto => {
+  dane.forEach((auto, index) => {
     const row = document.createElement("tr");
     row.innerHTML = `
       <td>${auto.marka}</td>
@@ -113,9 +113,14 @@ function renderujTabele(dane) {
       <td>${auto.dlugosc} mm</td>
       <td>${auto.szerokosc} mm</td>
     `;
+
+    row.classList.add("fade-in-up");
+    row.style.animationDelay = `${index * 50}ms`; 
+
     tbody.appendChild(row);
   });
 }
+
 
 document.addEventListener("DOMContentLoaded", () => {
   const select = document.getElementById("sortowanie");
