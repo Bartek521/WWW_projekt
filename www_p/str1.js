@@ -46,7 +46,52 @@ document.addEventListener("DOMContentLoaded", () => {
     waga: 1640,
     dlugosc: 4535,
     szerokosc: 1900
-  }
+  },
+  {
+  marka: "Ferrari",
+  model: "812 Superfast",
+  cena: 1600000,
+  predkosc: 340,
+  waga: 1525,
+  dlugosc: 4657,
+  szerokosc: 1971
+},
+{
+  marka: "Lamborghini",
+  model: "Revuelto",
+  cena: 2600000,
+  predkosc: 350,
+  waga: 1772,
+  dlugosc: 4947,
+  szerokosc: 2033
+},
+{
+  marka: "McLaren",
+  model: "765LT",
+  cena: 1700000,
+  predkosc: 330,
+  waga: 1339,
+  dlugosc: 4600,
+  szerokosc: 1930
+},
+{
+  marka: "Bugatti",
+  model: "Chiron Super Sport",
+  cena: 15000000,
+  predkosc: 440,
+  waga: 1995,
+  dlugosc: 4544,
+  szerokosc: 2038
+},
+{
+  marka: "Koenigsegg",
+  model: "Jesko Absolut",
+  cena: 14000000,
+  predkosc: 480,
+  waga: 1320,
+  dlugosc: 4610,
+  szerokosc: 2030
+}
 ];
 
 function renderujTabele(dane) {
@@ -190,3 +235,52 @@ Dziś Porsche to synonim luksusu, sportowego dziedzictwa i niemieckiej perfekcji
     imgElement.src = zdjecia[nr];
     textElement.textContent = ciekawostki[nr];
   }
+   const STORAGE_KEY = "localVotes";
+
+function getVotes() {
+  const data = localStorage.getItem(STORAGE_KEY);
+  return data ? JSON.parse(data) : {
+    "Audi": 0,
+    "BMW": 0,
+    "Mercedes": 0,
+    "Ferrari": 0,
+    "Lamborghini": 0,
+  };
+}
+
+function saveVotes(votes) {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(votes));
+}
+
+function updateResults() {
+  const votes = getVotes();
+  const list = document.getElementById("resultsList");
+  list.innerHTML = "";
+  for (const [brand, count] of Object.entries(votes)) {
+    const li = document.createElement("li");
+    li.textContent = `${brand}: ${count}`;
+    list.appendChild(li);
+  }
+}
+
+document.getElementById("voteForm").addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const email = document.getElementById("email").value.trim();
+  const selectedOption = document.querySelector('input[name="option"]:checked').value;
+
+  const allowed = ["Audi", "BMW", "Mercedes", "Ferrari", "Lamborghini"];
+  if (!allowed.includes(selectedOption)) {
+    alert("Nieprawidłowa opcja.");
+    return;
+  }
+
+  const votes = getVotes();
+  votes[selectedOption] += 1;
+  saveVotes(votes);
+  alert(`Dziękujemy za głos, ${email}!`);
+  this.reset();
+  updateResults();
+});
+
+updateResults();

@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" type="text/css" href="strinastyle.css">
-     <script src="str1.js"></script>
 </head>
 <body>
     <header>
@@ -41,7 +40,29 @@
         <li>Porównywanie pojazdów uwzględniając różne czynniki</li>
     </ul>
 </section>
+<section>
+  <h2 class="glos">Weź udział w głosowaniu!</h2>
+  <form id="voteForm">
+    <label>
+      Twój e-mail:
+      <input type="email" id="email" required>
+    </label>
+    <p>Wybierz markę, którą lubisz najbardziej:</p>
+    <div class="option"><input type="radio" name="option" value="Audi" required> Audi</div>
+    <div class="option"><input type="radio" name="option" value="BMW"> BMW</div>
+    <div class="option"><input type="radio" name="option" value="Mercedes"> Mercedes</div>
+    <div class="option"><input type="radio" name="option" value="Ferrari"> Ferrari</div>
+    <div class="option"><input type="radio" name="option" value="Lamborghini"> Lamborghini</div>
+    <button type="submit">Głosuj</button>
+  </form>
 
+  <div class="results">
+    <h3 class="wyniki">Wyniki głosowania:</h3>
+    <ul id="resultsList"></ul>
+  </div>
+</section>
+</main>
+<script src="str1.js"></script>
 <footer>
     <p>&copy; 2025 Pjotrowski i Mroziu development. Wszelkie prawa zastrzeżone.</p>
 </footer>
