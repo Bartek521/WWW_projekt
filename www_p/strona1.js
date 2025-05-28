@@ -13,8 +13,11 @@ document.addEventListener("DOMContentLoaded", () => {
     jasny_ciemny.textContent = isDark ? "☀️" : "🌛";
     localStorage.setItem("theme", isDark ? "dark" : "light");
   });
+
+  updateResults(); 
 });
-   const STORAGE_KEY = "localVotes";
+
+const STORAGE_KEY = "localVotes";
 
 function getVotes() {
   const data = localStorage.getItem(STORAGE_KEY);
@@ -24,6 +27,7 @@ function getVotes() {
     "Mercedes": 0,
     "Ferrari": 0,
     "Lamborghini": 0,
+    "Porsche" : 0
   };
 }
 
@@ -35,7 +39,10 @@ function updateResults() {
   const votes = getVotes();
   const list = document.getElementById("resultsList");
   list.innerHTML = "";
-  for (const [brand, count] of Object.entries(votes)) {
+
+  const sortedEntries = Object.entries(votes).sort((a, b) => b[1] - a[1]);
+
+  for (const [brand, count] of sortedEntries) {
     const li = document.createElement("li");
     li.textContent = `${brand}: ${count}`;
     list.appendChild(li);
@@ -46,20 +53,26 @@ document.getElementById("voteForm").addEventListener("submit", function (e) {
   e.preventDefault();
 
   const email = document.getElementById("email").value.trim();
-  const selectedOption = document.querySelector('input[name="option"]:checked').value;
+  const selectedOption = document.querySelector('input[name="option"]:checked');
 
-  const allowed = ["Audi", "BMW", "Mercedes", "Ferrari", "Lamborghini"];
-  if (!allowed.includes(selectedOption)) {
+  if (!selectedOption) {
+    alert("Wybierz markę, zanim zagłosujesz.");
+    return;
+  }
+
+  const value = selectedOption.value;
+  const allowed = ["Audi", "BMW", "Mercedes", "Ferrari", "Lamborghini","Porsche"];
+
+  if (!allowed.includes(value)) {
     alert("Nieprawidłowa opcja.");
     return;
   }
 
   const votes = getVotes();
-  votes[selectedOption] += 1;
+  votes[value] += 1;
   saveVotes(votes);
+
   alert(`Dziękujemy za głos, ${email}!`);
   this.reset();
   updateResults();
 });
-
-updateResults();

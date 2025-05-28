@@ -77,3 +77,4 @@ Dziś Porsche to synonim luksusu, sportowego dziedzictwa i niemieckiej perfekcji
     const pole = document.getElementById("historia");
     pole.innerText =historie[nr];
   }
+  
